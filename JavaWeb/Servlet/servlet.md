@@ -4,8 +4,16 @@ Servlet（Server Applet）是Java Servlet的简称，称为**小服务程序或�
 狭义的Servlet是指Java语言实现的一个接口，广义的Servlet是指任何实现了这个Servlet接口的类，一般情况下，人们将Servlet理解为后者。Servlet运行于支持Java的应用服务器中。从原理上讲，Servlet可以响应任何类型的请求，但**绝大多数情况下Servlet只用来扩展基于HTTP协议的Web服务器**。  
 ## 二、执行过程
 ![servlet执行过程][servlet_process]
+## 三、Servlet生命周期（重要）
+实例化 --> 初始化 --> 服务 --> 销毁  
 
-
+* 出生：（实例化-->初始化）第一次访问servlet就出生（默认情况下） 
+初始化执行一次`init()`  
+* 活着：（服务）应用活着，servlet就活着  
+每次请求都调用`service()`  
+* 死亡：（销毁）应用卸载了servlet就销毁  
+应用卸载时调用`destroy()`  
+## 四、Servlet的三种创建方式
 
 
 --------

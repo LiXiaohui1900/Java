@@ -1,4 +1,12 @@
 # Servlet
+## 目录
+* [什么是servlet](#一、什么是servlet)
+* [执行过程](#二、执行过程)
+* [Servlet生命周期（重要）](#三、Servlet生命周期（重要）)
+* [Servlet的三种创建方式](#四、Servlet的三种创建方式)
+* [Servlet获取配置信息](#五、Servlet获取配置信息)
+* [ServletContext（重要）](#六、ServletContext（重要）)
+* [核心类图](#七、核心类图)
 ## 一、什么是servlet
 Servlet（Server Applet）是Java Servlet的简称，称为**小服务程序或服务连接器**，用Java编写的服务器端程序，主要功能在于交互式地浏览和修改数据，生成动态Web内容。  
 狭义的Servlet是指Java语言实现的一个接口，广义的Servlet是指任何实现了这个Servlet接口的类，一般情况下，人们将Servlet理解为后者。Servlet运行于支持Java的应用服务器中。从原理上讲，Servlet可以响应任何类型的请求，但**绝大多数情况下Servlet只用来扩展基于HTTP协议的Web服务器**。  
@@ -106,7 +114,7 @@ public void doGet(HttpServletRequest request, HttpServletResponse response)
 ## 六、ServletContext（重要）
 ServletContext: 代表的是整个应用。一个应用只有一个ServletContext对象。
 ### 作用
-* 域对象：在一定范围内（当前英勇），使多个Servlet共享数据。  
+* 域对象：在一定范围内（当前应用），使多个Servlet共享数据。  
 	常用方法：  
 	```Java
 	void setAttribute(String name,object value);//向ServletContext对象的map中添加数据
@@ -141,6 +149,9 @@ ServletContext: 代表的是整个应用。一个应用只有一个ServletContex
 	RequestDispatcher rd = application.getRequestDispatcher("/ServletContextDemo1");
 	rd.forward(request,response);
 	```
+## 七、核心类图
+![servlet核心类图][servlet_class]
 	
 --------
 [servlet_process]:img/Servlet的执行过程.jpg "servlet执行过程"
+[servlet_class]:img/Servlet规范的核心类图.jpg "servlet规范的核心类图"

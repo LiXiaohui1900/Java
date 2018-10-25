@@ -122,7 +122,7 @@ public void doGet(HttpServletRequest request, HttpServletResponse response)
 	System.out.println(encoding);
 ```
 
-ServletContext（重要）
+ServletContext
 ------
 ServletContext: 代表的是整个应用。一个应用只有一个ServletContext对象。
 ### 作用
@@ -161,7 +161,8 @@ ServletContext: 代表的是整个应用。一个应用只有一个ServletContex
 	RequestDispatcher rd = application.getRequestDispatcher("/ServletContextDemo1");
 	rd.forward(request,response);
 	```
-## 核心类图
+核心类图
+------
 ![servlet核心类图][servlet_class]
 	
 --------

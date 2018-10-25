@@ -13,6 +13,7 @@ Servlet（Server Applet）是Java Servlet的简称，称为**小服务程序或�
 每次请求都调用`service()`  
 * 死亡：（销毁）应用卸载了servlet就销毁  
 应用卸载时调用`destroy()`  
+<<<<<<< HEAD
 ```Java
 public class ServletDemo1 implements Servlet{
 	//Servlet生命周期的方法
@@ -52,6 +53,9 @@ public class ServletDemo1 implements Servlet{
 3. 继承javax.servlet.http.HttpServlet类（模板方法设计模式）（开发中常用模式）  
 ![][HttpServlet]
 
+=======
+## 四、Servlet的三种创建方式
+>>>>>>> 6dbc0e77889b6454b0b970723480da1adf697e60
 
 
 --------

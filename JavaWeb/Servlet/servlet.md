@@ -13,7 +13,6 @@ Servlet（Server Applet）是Java Servlet的简称，称为**小服务程序或�
 每次请求都调用`service()`  
 * 死亡：（销毁）应用卸载了servlet就销毁  
 应用卸载时调用`destroy()`  
-<<<<<<< HEAD
 ```Java
 public class ServletDemo1 implements Servlet{
 	//Servlet生命周期的方法
@@ -45,22 +44,44 @@ public class ServletDemo1 implements Servlet{
 	}
 ```
 ## 四、Servlet的三种创建方式
-1. 实现javax.servlet.Servlet接口  
-![][implements_Servlet1]
-![][implements_Servlet2]
-2. 继承javax.servlet.GenericServlet类（适配器模式）  
-![][GenericServlet]
-3. 继承javax.servlet.http.HttpServlet类（模板方法设计模式）（开发中常用模式）  
-![][HttpServlet]
+1. 实现javax.servlet.Servlet接口（同上）  
 
-=======
+2. 继承javax.servlet.GenericServlet类（适配器模式）  
+```Java
+public class ServletDemo2 extends GenericServlet{
+
+	@Override
+	public void service(ServletRequest arg0, ServletResponse arg1)
+			throws ServletException, IOException {
+		System.out.println("hello ServletDemo2");
+	}
+
+}
+```
+3. 继承javax.servlet.http.HttpServlet类（模板方法设计模式）（开发中常用模式）  
+```Java
+public class ServletDemo3 extends HttpServlet{
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		System.out.println("*******doGet *******");
+		System.out.println(req.getRemoteAddr());
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		System.out.println("**********doPost**********");
+	}
+	
+}
+```
+
+
 ## 四、Servlet的三种创建方式
->>>>>>> 6dbc0e77889b6454b0b970723480da1adf697e60
+
 
 
 --------
 [servlet_process]:img/Servlet的执行过程.jpg "servlet执行过程"
-[implements_Servlet1]:img/Servlet1.png
-[implements_Servlet2]:img/Servlet2.png
-[GenericServlet]:img/GenericServlet.png
-[HttpServlet]:img/HttpServlet.png

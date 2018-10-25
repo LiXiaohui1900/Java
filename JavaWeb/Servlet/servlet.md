@@ -96,7 +96,8 @@ public class ServletDemo3 extends HttpServlet{
 ```
 
 
-## Servlet获取配置信息
+Servlet获取配置信息
+------
 方式1：  
 ```Java
 private ServletConfig config;
@@ -120,7 +121,9 @@ public void doGet(HttpServletRequest request, HttpServletResponse response)
 	String encoding = this.getInitParameter("encoding");
 	System.out.println(encoding);
 ```
-## ServletContext（重要）
+
+ServletContext（重要）
+------
 ServletContext: 代表的是整个应用。一个应用只有一个ServletContext对象。
 ### 作用
 * 域对象：在一定范围内（当前应用），使多个Servlet共享数据。  

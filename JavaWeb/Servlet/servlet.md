@@ -79,9 +79,68 @@ public class ServletDemo3 extends HttpServlet{
 ```
 
 
-## 四、Servlet的三种创建方式
+## 五、Servlet获取配置信息
+方式1：  
+```Java
+private ServletConfig config;
+//使用初始化方法恢复到ServletConfig对象，此对象由服务器创建
+public void init(ServletConfig config) throws ServletException {
+	this.config = config;
+}
 
-
-
+public void doGet(HttpServletRequest request, HttpServletResponse response)
+		throws ServletException, IOException {
+	String encoding = config.getInitParameter("encoding");//获得配置文件中的信息的
+	System.out.println(encoding);
+```
+方式2：  
+```Java
+	String encoding = this.getServletConfig().getInitParameter("encoding");
+	System.out.println(encoding);
+```
+方式3：  
+```Java
+	String encoding = this.getInitParameter("encoding");
+	System.out.println(encoding);
+```
+## 六、ServletContext（重要）
+ServletContext: 代表的是整个应用。一个应用只有一个ServletContext对象。
+### 作用
+* 域对象：在一定范围内（当前英勇），使多个Servlet共享数据。  
+	常用方法：  
+	```Java
+	void setAttribute(String name,object value);//向ServletContext对象的map中添加数据
+	Object getAttribute(String name);//从ServletContext对象的map中取数据
+	void rmoveAttribute(String name);//根据name去移除数据
+	```
+* 获取全局配置信息：
+	配置当前应用的全局信息：  
+	```xml
+	<context-param>
+		<param-name>encoding</param-name>
+		<param-value>UTF-8</param-value>
+	</context-param>
+	```
+	获取全局配置信息：  
+	```Java
+	String encoding = application.getInitParameter("encoding");
+	```
+* 获取资源路径：  
+	`String getRealPath(String path);`  
+	根据文件在项目中的相对路径（`/WEB-INF/...`）获取文件的绝对路径  
+	```Java
+	String path = this.getServletContext().getRealPath("/WEB-INF/classes/b.properties");
+	Properties pro = new Properties();
+	pro.load(new FileInputStream(path));
+	
+	System.out.println(pro.get("key"));
+	```
+* 实现Servlet的转发
+	```Java
+	ServletContext application = this.getServletContext();
+	RequestDispatcher rd = application.getRequestDispatcher("/ServletContextDemo1");
+	rd.forward(request,response);
+	```
+	
 --------
 [servlet_process]:img/Servlet的执行过程.jpg "servlet执行过程"

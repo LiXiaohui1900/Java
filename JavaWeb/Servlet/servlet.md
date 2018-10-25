@@ -17,7 +17,9 @@ Servlet（Server Applet）是Java Servlet的简称，称为**小服务程序或�
 执行过程
 ------
 ![servlet执行过程][servlet_process]
-## 三、Servlet生命周期（重要）
+
+三、Servlet生命周期（重要）
+------
 实例化 --> 初始化 --> 服务 --> 销毁  
 
 * 出生：（实例化-->初始化）第一次访问servlet就出生（默认情况下） 

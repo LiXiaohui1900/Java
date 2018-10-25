@@ -3,8 +3,8 @@ Servlet
 ## 目录
 * [什么是servlet](#什么是servlet)
 * [执行过程](#执行过程)
-* [Servlet生命周期（重要）](#Servlet生命周期（重要）)
-* [Servlet的三种创建方式](#四、Servlet的三种创建方式)
+* [Servlet生命周期（重要）](#Servlet生命周期)
+* [Servlet的三种创建方式](#Servlet的三种创建方式)
 * [Servlet获取配置信息](#五、Servlet获取配置信息)
 * [ServletContext（重要）](#六、ServletContext（重要）)
 * [核心类图](#七、核心类图)  
@@ -59,7 +59,7 @@ public class ServletDemo1 implements Servlet{
 	}
 ```
 
-四、Servlet的三种创建方式
+Servlet的三种创建方式
 ------
 1. 实现javax.servlet.Servlet接口（同上）  
 

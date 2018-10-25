@@ -5,9 +5,9 @@ Servlet
 * [执行过程](#执行过程)
 * [Servlet生命周期（重要）](#Servlet生命周期)
 * [Servlet的三种创建方式](#Servlet的三种创建方式)
-* [Servlet获取配置信息](#五、Servlet获取配置信息)
-* [ServletContext（重要）](#六、ServletContext（重要）)
-* [核心类图](#七、核心类图)  
+* [Servlet获取配置信息](#Servlet获取配置信息)
+* [ServletContext（重要）](#ServletContext)
+* [核心类图](#核心类图)  
 
 什么是servlet
 ------
@@ -18,7 +18,7 @@ Servlet（Server Applet）是Java Servlet的简称，称为**小服务程序或�
 ------
 ![servlet执行过程][servlet_process]
 
-Servlet生命周期（重要）
+Servlet生命周期
 ------
 实例化 --> 初始化 --> 服务 --> 销毁  
 
@@ -96,7 +96,7 @@ public class ServletDemo3 extends HttpServlet{
 ```
 
 
-## 五、Servlet获取配置信息
+## Servlet获取配置信息
 方式1：  
 ```Java
 private ServletConfig config;
@@ -120,7 +120,7 @@ public void doGet(HttpServletRequest request, HttpServletResponse response)
 	String encoding = this.getInitParameter("encoding");
 	System.out.println(encoding);
 ```
-## 六、ServletContext（重要）
+## ServletContext（重要）
 ServletContext: 代表的是整个应用。一个应用只有一个ServletContext对象。
 ### 作用
 * 域对象：在一定范围内（当前应用），使多个Servlet共享数据。  
@@ -158,7 +158,7 @@ ServletContext: 代表的是整个应用。一个应用只有一个ServletContex
 	RequestDispatcher rd = application.getRequestDispatcher("/ServletContextDemo1");
 	rd.forward(request,response);
 	```
-## 七、核心类图
+## 核心类图
 ![servlet核心类图][servlet_class]
 	
 --------

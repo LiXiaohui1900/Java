@@ -76,9 +76,68 @@ webapp：创建web工程
 1. 当第二依赖的范围是compile的时候，传递性依赖的范围与第一直接依赖的范围一致。
 2. 当第二直接依赖的范围是test的时候，依赖不会得以传递。
 3. 当第二依赖的范围是provided的时候，只传递第一直接依赖范围也为provided的依赖，且传递性依赖的范围同样为 provided；
-4. 当第二直接依赖的范围是runtime的时候，传递性依赖的范围与第一直接依赖的范围一致，但compile例外，此时传递的依赖范围为runtime
-
-
+4. 当第二直接依赖的范围是runtime的时候，传递性依赖的范围与第一直接依赖的范围一致，但compile例外，此时传递的依赖范围为runtime  
+#### 可选依赖  
+```xml
+    <dependency>
+      <groupId>com.itheima.maven</groupId>
+      <artifactId>MavenFirst</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+      <optional>true</optional>
+    </dependency>
+```
+Optional标签标示该依赖是否可选，默认是false。可以理解为，如果为true，则表示该依赖不会传递下去，如果为false，则会传递下去。  
+#### 排除依赖  
+```xml
+    <dependency>
+      <groupId>com.itheima.maven</groupId>
+      <artifactId>MavenFirst</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-context-support</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+```
+排除第一依赖中<exclusions>标签下的依赖  
+### 生命周期  
+Maven有三个生命周期：clean生命周期、default生命周期、site生命周期  
+生命周期可以理解为项目构建的步骤集合  
+#### Clean生命周期  
+```
+pre-clean 执行一些需要在clean之前完成的工作 
+clean 移除所有上一次构建生成的文件 
+post-clean 执行一些需要在clean之后立刻完成的工作
+```
+mvn clean命令，等同于 mvn pre-clean clean。只要执行后面的命令，那么前面的命令都会执行，不需要再重新去输入命令。  
+#### Default生命周期（重点）
+```diff
+validate 
+generate-sources 
+process-sources 
+generate-resources 
+process-resources 复制并处理资源文件，至目标目录，准备打包。 
+- compile 编译项目的源代码。 
+process-classes 
+generate-test-sources 
+process-test-sources 
+generate-test-resources 
+process-test-resources 复制并处理资源文件，至目标测试目录。 
+test-compile 编译测试源代码。 
+process-test-classes 
+- test 使用合适的单元测试框架运行测试。这些测试代码不会被打包或部署。 
+prepare-package 
+- package 接受编译好的代码，打包成可发布的格式，如 JAR 。 
+pre-integration-test 
+integration-test 
+post-integration-test 
+verify 
+- install 将包安装至本地仓库，以让其它项目依赖。 
+deploy 将最终的包复制到远程的仓库，以让其它开发人员与项目共享。
+```
+在maven中，只要在同一个生命周期，你执行后面的阶段，那么前面的阶段也会被执行，而且不需要额外去输入前面的阶段，这样大大减轻了程序员的工作。  
 
 
 

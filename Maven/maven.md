@@ -138,7 +138,49 @@ verify
 deploy 将最终的包复制到远程的仓库，以让其它开发人员与项目共享。
 ```
 在maven中，只要在同一个生命周期，你执行后面的阶段，那么前面的阶段也会被执行，而且不需要额外去输入前面的阶段，这样大大减轻了程序员的工作。  
-
+#### Site生命周期  
+```
+pre-site 执行一些需要在生成站点文档之前完成的工作 
+site 生成项目的站点文档 
+post-site 执行一些需要在生成站点文档之后完成的工作，并且为部署做准备 
+site-deploy 将生成的站点文档部署到特定的服务器上 
+```
+### 插件  
+插件（plugin），每个插件都能实现一个阶段的功能。Maven的核心是生命周期，但是生命周期相当于主要指定了maven命令执行的流程顺序，而没有真正实现流程的功能，功能是有插件来实现的。  
+比如：compile就是一个插件实现的功能。
+#### 编译插件  
+```
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+```
+#### Tomcat插件  
+如果使用maven的tomcat插件的话，那么本地则不需要安装tomcat。  
+```
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <configuration>
+          <port>8080</port>
+          <path>/</path>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+```
+使用tomcat7来运行web工程，它的命令是：tomcat7:run  
 
 
 

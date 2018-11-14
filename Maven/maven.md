@@ -84,7 +84,7 @@ webapp：创建web工程
 
 
 [maven_web]:http://maven.apache.org "Maven官网"
-[maven_process]:img\maven构建过程.jpg "maven构建过程"
-[scope]:img\scope.jpg "Maven依赖范围"
-[dependency]:img\dependency.png "Maven依赖关系"
-[scope_dependency]:img\scope_dependency.jpg "Maven依赖范围传递"
+[maven_process]:img/maven构建过程.jpg "maven构建过程"
+[scope]:img/scope.jpg "Maven依赖范围"
+[dependency]:img/dependency.png "Maven依赖关系"
+[scope_dependency]:img/scope_dependency.jpg "Maven依赖范围传递"

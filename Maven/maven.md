@@ -22,8 +22,8 @@
 	* [上传jar包](#上传jar包)  
 	* [拉取jar包](#拉取jar包)  
 * [其他属性](#其他属性)  
-	* [properties标签](#properties标签，可用于管理版本)  
-	* [repositories标签](#repositories标签，设定主仓库，按顺序进行查找)  
+	* [properties标签](#properties标签)  
+	* [repositories标签](#repositories标签)  
 
 ## 介绍
 * Maven是基于POM（Project Object Model），通过一小段描述来对项目的代码、报告、文件进行管理的工具。  
@@ -364,7 +364,8 @@ id用于唯一指定一条认证配信息，之后会在pom中使用。
 
 ## 其他属性
 
-### properties标签，可用于管理版本  
+### properties标签  
+可用于管理版本  
 ```xml
 <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -388,7 +389,8 @@ id用于唯一指定一条认证配信息，之后会在pom中使用。
     </dependency>
 ```
 
-### repositories标签，设定主仓库，按顺序进行查找  
+### repositories标签  
+设定主仓库，按顺序进行查找  
 ```xml
 <repositories>
     <repository>

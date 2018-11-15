@@ -7,7 +7,7 @@
 构建过程：  
 ![maven构建过程][maven_process]  
 ## 安装
-* 下载地址：[http://maven.apache.org][maven_web]{:target="_blank"}，下载后直接解压即可  
+* 下载地址：[http://maven.apache.org](http://maven.apache.org){:target="_blank"}，下载后直接解压即可  
 * 配置环境变量 MAVEN_HOME（与配置JAVA_HOME方法相同）  
 * 测试Maven是否安装成功，在系统命令行执行命令：mvn -v  
 

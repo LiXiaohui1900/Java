@@ -1,5 +1,30 @@
 # Maven  
 
+## 目录  
+* [介绍](#介绍)  
+* [安装](#安装)  
+* [配置](#配置)  
+* [Maven工程结构](#Maven工程结构)  
+* [Maven命令的使用](#Maven命令的使用)  
+* [M2Eclipse](#M2Eclipse)  
+* [Maven的核心概念](#Maven的核心概念)  
+	* [坐标](#坐标)  
+	* [依赖管理](#依赖管理)  
+	* [生命周期](#生命周期)  
+	* [插件](#插件)  
+	* [继承](#继承)  
+	* [聚合](#聚合)  
+* [Nexus](#Nexus)  
+	* [下载及安装](#下载及安装)  
+	* [配置](#配置)  
+	* [主要仓库](#主要仓库)  
+	* [仓库类型](#仓库类型)  
+	* [上传jar包](#上传jar包)  
+	* [拉取jar包](#拉取jar包)  
+* [其他属性](#其他属性)  
+	* [properties标签](#properties标签，可用于管理版本)  
+	* [repositories标签](#repositories标签，设定主仓库，按顺序进行查找)  
+
 ## 介绍
 * Maven是基于POM（Project Object Model），通过一小段描述来对项目的代码、报告、文件进行管理的工具。  
 * Maven是一个跨平台的项目管理工具，它是使用Java开发的，依赖于jdk1.6及以上。  
@@ -373,6 +398,8 @@ id用于唯一指定一条认证配信息，之后会在pom中使用。
     </repository>
 </repositories>
 ```
+
+[返回目录](#目录)
 
 
 [maven_web]:http://maven.apache.org "Maven官网"

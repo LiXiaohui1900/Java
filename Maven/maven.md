@@ -7,7 +7,7 @@
 构建过程：  
 ![maven构建过程][maven_process]  
 ## 安装
-* 下载地址：[maven官网][maven_web]，下载后直接解压即可  
+* 下载地址：<a href="http://maven.apache.org" target="_blank">http://maven.apache.org</a>，下载后直接解压即可  
 * 配置环境变量 MAVEN_HOME（与配置JAVA_HOME方法相同）  
 * 测试Maven是否安装成功，在系统命令行执行命令：mvn -v  
 
@@ -244,7 +244,7 @@ nexus是一种常见的maven私服软件，为所有来自中央仓库的构建�
 
 ### 下载及安装  
 * 下载  
-下载地址：[nexus下载地址][nexus]  
+下载地址：<a href="https://www.sonatype.com/download-oss-sonatype" target="_blank">https://www.sonatype.com/download-oss-sonatype</a>  
 下载好以后解压会有两个文件夹：nexus的和sonatype-work。前者是功能的实现，后者负责存储数据。  
 * 安装  
 进入nexus的bin目录下，以管理员身份运行以下命令：  
@@ -375,8 +375,7 @@ id用于唯一指定一条认证配信息，之后会在pom中使用。
 ```
 
 
-[maven_web]:http://maven.apache.org "Maven官网"
-[nexus]:https://www.sonatype.com/download-oss-sonatype "nexus下载地址"
+
 [maven_process]:img/maven构建过程.jpg "maven构建过程"
 [scope]:img/scope.jpg "Maven依赖范围"
 [dependency]:img/dependency.png "Maven依赖关系"

@@ -7,7 +7,7 @@
 构建过程：  
 ![maven构建过程][maven_process]  
 ## 安装
-* 下载地址：[http://maven.apache.org][maven_web]{:target="_blank"}，下载后直接解压即可  
+* 下载地址：[http://maven.apache.org][maven_web]，下载后直接解压即可  
 * 配置环境变量 MAVEN_HOME（与配置JAVA_HOME方法相同）  
 * 测试Maven是否安装成功，在系统命令行执行命令：mvn -v  
 
@@ -244,7 +244,7 @@ nexus是一种常见的maven私服软件，为所有来自中央仓库的构建�
 
 ### 下载及安装  
 * 下载  
-下载地址：[http://maven.apache.org][nexus]{:target="_blank"}  
+下载地址：[http://maven.apache.org][nexus]  
 下载好以后解压会有两个文件夹：nexus的和sonatype-work。前者是功能的实现，后者负责存储数据。  
 * 安装  
 进入nexus的bin目录下，以管理员身份运行以下命令：  

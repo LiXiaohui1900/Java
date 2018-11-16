@@ -401,9 +401,13 @@ id用于唯一指定一条认证配信息，之后会在pom中使用。
 </repositories>
 ```
 
+### Maven依赖查找  
+[https://mvnrepository.com/][maven_repository]  
+
 [返回目录](#目录)
 
 
+[maven_repository]:https://mvnrepository.com/
 [maven_web]:http://maven.apache.org "Maven官网"
 [nexus]:https://www.sonatype.com/download-oss-sonatype "nexus下载地址"
 [maven_process]:img/maven构建过程.jpg "maven构建过程"

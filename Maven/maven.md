@@ -24,6 +24,7 @@
 * [其他属性](#其他属性)  
 	* [properties标签](#properties标签)  
 	* [repositories标签](#repositories标签)  
+	* [Maven依赖查找](#Maven依赖查找)
 
 ## 介绍
 * Maven是基于POM（Project Object Model），通过一小段描述来对项目的代码、报告、文件进行管理的工具。  
